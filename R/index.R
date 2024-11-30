@@ -586,11 +586,11 @@ load_location_aliases <- function() {
     if (exists("location_aliases", safedata_env)) {
         location_aliases <- get("location_aliases", safedata_env)
     } else {
-        location_aliases <- jsonlite::fromJSON(
+        location_aliases <- read.csv(
             getOption("safedata.loc_aliases")
         )
-        location_aliases <- as.data.frame(location_aliases)
-        names(location_aliases) <- c("zenodo_record_id", "location", "alias")
+        # location_aliases <- as.data.frame(location_aliases)
+        # names(location_aliases) <- c("zenodo_record_id", "location", "alias")
         assign("location_aliases", location_aliases, safedata_env)
     }
 
