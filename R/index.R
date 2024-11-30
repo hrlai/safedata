@@ -389,7 +389,7 @@ load_index <- function() {
 
     verbose_message("Loading and caching index")
 
-    index <- jsonlite::fromJSON(getOption("safedata.index"))
+    index <- jsonlite::fromJSON(getOption("safedata.index"))$entries
 
     # format the datetime classes
     index$publication_date <- as.POSIXct(index$publication_date)
