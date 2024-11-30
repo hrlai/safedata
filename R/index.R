@@ -133,7 +133,7 @@ set_safedata_dir <- function(safedir, update = TRUE) {
 
         # Try to get the current index hashes from the SAFE Data API and
         # then check each of the three index files
-        api <- paste0(getOption("safedata.url"), "/api/index_hashes.json")
+        api <- paste0(getOption("safedata.url"), "/api/index_hashes")
         index_hashes <- try_to_download(api)
 
         if (isFALSE(index_hashes)) {
