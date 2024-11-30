@@ -300,7 +300,7 @@ download_index <- function() {
 
     path <- getOption("safedata.index")
     url <- getOption("safedata.url")
-    api <- paste0(url, "/api/metadata_index.json")
+    api <- paste0(url, "/api/index")
 
     success <- try_to_download(api, path)
 
@@ -325,7 +325,7 @@ download_gazetteer <- function() {
 
     path <- getOption("safedata.gazetteer")
     url <- getOption("safedata.url")
-    api <- paste0(url, "/api/gazetteer.json")
+    api <- paste0(url, "/api/gazetteer")
 
     success <- try_to_download(api, path)
 
@@ -351,7 +351,7 @@ download_location_aliases <- function() {
 
     path <- getOption("safedata.loc_aliases")
     url <- getOption("safedata.url")
-    api <- paste0(url, "/api/location_aliases.json")
+    api <- paste0(url, "/api/location_aliases")
     success <- try_to_download(api, path)
 
     if (!success) {
